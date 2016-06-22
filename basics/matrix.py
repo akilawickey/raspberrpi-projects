@@ -1,0 +1,8 @@
+import cv2.cv as cv
+
+im = cv.LoadImage("img/lena2.jpg")
+
+for i in range(im.height):
+    for j in range(im.width):
+        im[i,j] #Do whatever you want with your pixel
+	print im[i,j]
