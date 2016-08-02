@@ -1,10 +1,9 @@
 from cv2 import *
-from cv import *
 import numpy as np
 from matplotlib import pyplot as plt
 
 # initialize the camera
-cam = VideoCapture(0)   # 0 -> index of camera
+cam = VideoCapture(1)   # 0 -> index of camera
 s, img = cam.read()
 
 if s:    # frame captured without any errors
