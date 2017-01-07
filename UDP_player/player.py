@@ -2,6 +2,8 @@ import multiprocessing
 import socket
 import sys
 import time
+import subprocess
+
 from subprocess import Popen
 
 
@@ -83,19 +85,25 @@ if __name__ == '__main__':
 	print 'Socket bind complete'
 	jobs = []
 	i = 0
-	p2.start()
+	# if p.is_alive()
+	# 	p2.start()
 	# p2.join()
 
 	while True:
+	
 		d = s.recvfrom(1024)
 		flag = 1
 		data = d[0]
 		addr = d[1]
 
 		if data.strip() == 'movie1':
+			subprocess.Popen('killall omxplayer.bin', shell=True)
+			subprocess.Popen('killall omxplayer.bin', shell=True)
 			movie_path = movie_path1
 			print movie_path
 		if data.strip() == 'movie2':
+			subprocess.Popen('killall omxplayer.bin', shell=True)
+			subprocess.Popen('killall omxplayer.bin', shell=True)
 			movie_path = movie_path2
 			print movie_path
 		p = multiprocessing.Process(target=worker)
